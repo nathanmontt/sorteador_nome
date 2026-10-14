@@ -6,5 +6,19 @@ O que você vai praticar: Conversão de Listas para Sets (conjuntos não aceitam
 Toque para o GitHub: No Readme, explique como o uso do set() resolveu o problema de duplicatas em uma única linha de código, mostrando que você entende de otimização básica.
 """
 
+sorteador_nome = {}
+
 while True:
-    nome_participantes = input("Digite os nomes dos participantes: ")
+    menu_options = input("Digite uma opção do menu:\n1 - Adicionar um nome\n2 - Remover um nome\n3 - Limpar lista de nomes\n4 - Ver Lista completa\n5 - Download (.pdf) [em andamento]\n6 - Sair\n: ").strip()
+    
+    match menu_options:
+        case "1":
+            while True:
+                nome_participantes = input("Digite os nomes dos participantes, e 'sair' para fechar o programa: ")
+                if nome_participantes.lower() in ("sair", "cancelar", "s", "não"):
+                    break
+                
+                nome_participantes = nome_participantes.capitalize()
+
+        case "6":
+            break
