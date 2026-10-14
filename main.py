@@ -1,0 +1,10 @@
+"""
+2. Sorteador de Nomes sem Repetição (Foco em Sets)
+Imagine que você fez um sorteio no Instagram e as pessoas comentaram várias vezes. Você precisa sortear um vencedor, mas cada pessoa só pode ter uma "chance" (nome único).
+Como funciona: O programa pede para o usuário digitar vários nomes (ou recebe uma lista grande com nomes repetidos). Antes de sortear, o programa remove as duplicatas.
+O que você vai praticar: Conversão de Listas para Sets (conjuntos não aceitam valores repetidos), uso da biblioteca nativa random (usando random.choice()).
+Toque para o GitHub: No Readme, explique como o uso do set() resolveu o problema de duplicatas em uma única linha de código, mostrando que você entende de otimização básica.
+"""
+
+while True:
+    nome_participantes = input("Digite os nomes dos participantes: ")
