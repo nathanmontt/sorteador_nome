@@ -5,20 +5,23 @@ Como funciona: O programa pede para o usuário digitar vários nomes (ou recebe 
 O que você vai praticar: Conversão de Listas para Sets (conjuntos não aceitam valores repetidos), uso da biblioteca nativa random (usando random.choice()).
 Toque para o GitHub: No Readme, explique como o uso do set() resolveu o problema de duplicatas em uma única linha de código, mostrando que você entende de otimização básica.
 """
+import random
 
-sorteador_nome = {}
+sorteador_nome_set = set()
 
 while True:
-    menu_options = input("Digite uma opção do menu:\n1 - Adicionar um nome\n2 - Remover um nome\n3 - Limpar lista de nomes\n4 - Ver Lista completa\n5 - Download (.pdf) [em andamento]\n6 - Sair\n: ").strip()
-    
+    menu_options = input("1 pra adicionar, 2 pra mostrar, 3 pra sair: ")
     match menu_options:
         case "1":
             while True:
-                nome_participantes = input("Digite os nomes dos participantes, e 'sair' para fechar o programa: ")
-                if nome_participantes.lower() in ("sair", "cancelar", "s", "não"):
+                name = input("nome, e 'q' pra sair: ")
+                sorteador_nome_set.add(name)
+                if name in ("q", "Q"):
                     break
-                
-                nome_participantes = nome_participantes.capitalize()
 
-        case "6":
+        case "2":
+            for nome in sorteador_nome_set:
+                print(nome)
+
+        case "3":
             break
