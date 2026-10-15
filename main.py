@@ -15,10 +15,13 @@ while True:
         case "1":
             while True:
                 name = input("nome, e 'q' pra sair: ")
-                sorteador_nome_set.add(name)
+                if (any(caractere.isdigit() for caractere in name)):
+                    print("Inválido. Digite um nome")
+                    continue
                 if name in ("q", "Q"):
                     break
 
+                sorteador_nome_set.add(name)
         case "2":
             for nome in sorteador_nome_set:
                 print(nome)
