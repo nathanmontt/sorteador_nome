@@ -8,23 +8,32 @@ Toque para o GitHub: No Readme, explique como o uso do set() resolveu o problema
 import random
 
 sorteador_nome_set = set()
+cont = 1
+print("SORTEADOR DE NOMES PARA EVENTOS!")
 
 while True:
-    menu_options = input("1 pra adicionar, 2 pra mostrar, 3 pra pegar um nome, 4 pra sair: ")
+    menu_options = input("Digite:\n1 - Adicionar\n2 - Visualizar\n3 - Sortear um nome\n4 - Sair\n: ")
     match menu_options:
         case "1":
             while True:
-                name = input("nome, e 'q' pra sair: ")
+                name = input("Digite um nome, ou 'Q' para sair: ")
                 if (any(caractere.isdigit() for caractere in name)):
                     print("Inválido. Digite um nome")
                     continue
-                if name in ("q", "Q"):
+
+                if name.lower() in ("q", "sair", "cancelar"):
                     break
 
                 sorteador_nome_set.add(name)
+
         case "2":
-            for nome in sorteador_nome_set:
-                print(nome)
+            if not sorteador_nome_set:
+                print("Sem nomes, adicione um.")
+            else:
+                for nome in sorteador_nome_set:
+                    print(f"{cont} - {nome}")
+                    cont += 1
+            print()
 
         case "3":
             if not sorteador_nome_set:
