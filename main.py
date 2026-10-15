@@ -10,7 +10,7 @@ import random
 sorteador_nome_set = set()
 
 while True:
-    menu_options = input("1 pra adicionar, 2 pra mostrar, 3 pra sair: ")
+    menu_options = input("1 pra adicionar, 2 pra mostrar, 3 pra pegar um nome, 4 pra sair: ")
     match menu_options:
         case "1":
             while True:
@@ -26,5 +26,8 @@ while True:
             for nome in sorteador_nome_set:
                 print(nome)
 
-        case "3":
+        case "4":
             break
+
+        case _:
+            print("Opção não encontrada")
