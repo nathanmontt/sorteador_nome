@@ -26,6 +26,13 @@ while True:
             for nome in sorteador_nome_set:
                 print(nome)
 
+        case "3":
+            if not sorteador_nome_set:
+                print("Sorteador vazio. Adicione um nome\n")
+            else:
+                name_list = list(sorteador_nome_set)
+                print(random.choice(name_list))
+
         case "4":
             break
 
