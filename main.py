@@ -16,7 +16,8 @@ while True:
     match menu_options:
         case "1":
             while True:
-                name = input("Digite um nome, ou 'Q' para sair: ")
+                name = input("Digite um nome, ou 'Q' para sair: ").strip()
+                print(name)
                 if (any(caractere.isdigit() for caractere in name)):
                     print("Inválido. Digite um nome")
                     continue
