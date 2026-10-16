@@ -18,9 +18,10 @@ while True:
             while True:
                 name = input("Digite um nome, ou 'Q' para sair: ").strip()
                 print(name)
-                if (any(caractere.isdigit() for caractere in name)):
+                if (any(caractere.isdigit() for caractere in name)) or not name:
                     print("Inválido. Digite um nome")
                     continue
+
 
                 if name.lower() in ("q", "sair", "cancelar"):
                     break
