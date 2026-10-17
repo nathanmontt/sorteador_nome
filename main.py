@@ -17,11 +17,9 @@ while True:
         case "1":
             while True:
                 name = input("Digite um nome, ou 'Q' para sair: ").strip()
-                print(name)
                 if (any(caractere.isdigit() for caractere in name)) or not name:
                     print("Inválido. Digite um nome")
                     continue
-
 
                 if name.lower() in ("q", "sair", "cancelar"):
                     break
@@ -42,7 +40,8 @@ while True:
                 print("Sorteador vazio. Adicione um nome\n")
             else:
                 name_list = list(sorteador_nome_set)
-                print(random.choice(name_list))
+                temp_var = random.choice(temp_var)
+                print(temp_var)
 
         case "4":
             break
