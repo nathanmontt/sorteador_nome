@@ -8,6 +8,7 @@ Toque para o GitHub: No Readme, explique como o uso do set() resolveu o problema
 import random
 
 sorteador_nome_set = set()
+temp_var = []
 cont = 1
 print("SORTEADOR DE NOMES PARA EVENTOS!")
 
@@ -40,8 +41,10 @@ while True:
                 print("Sorteador vazio. Adicione um nome\n")
             else:
                 name_list = list(sorteador_nome_set)
-                temp_var = random.choice(temp_var)
+                temp_var = random.choice(name_list)
+                # print(temp_var)
                 print(temp_var)
+                
 
         case "4":
             break
