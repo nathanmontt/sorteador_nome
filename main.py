@@ -44,7 +44,14 @@ while True:
                 name_list = list(sorteador_nome_set)
                 temp_var = random.choice(name_list)
 
-                print(f"Parabéns, {temp_var}, você foi sorteado(a)!\nAguarde o contato da equipe para o envio do prêmio!\n")
+                winners_quantity = int(input("Quantos vencedores quer que apareçam: "))
+
+                if winners_quantity > len(name_list):
+                    print("Quantidade de vencedores escolhidas superior à quantidade de participantes.")
+                    continue
+
+                for each_winner in range (0, winners_quantity):
+                    print(f"Parabéns, {temp_var}, você foi sorteado(a)!\nAguarde o contato da equipe para o envio do prêmio!\n")
                 
                 sorteador_nome_set.remove(temp_var)
                 
