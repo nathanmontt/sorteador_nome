@@ -17,7 +17,7 @@ while True:
     match menu_options:
         case "1":
             while True:
-                name = input("Digite um nome, ou 'Q' para sair: ").strip()
+                name = input("Digite um nome, ou 'Q' para sair: ").strip().capitalize()
                 if (any(caractere.isdigit() for caractere in name)) or not name:
                     print("Inválido. Digite um nome")
                     continue
@@ -34,6 +34,7 @@ while True:
                 for nome in sorteador_nome_set:
                     print(f"{cont} - {nome}")
                     cont += 1
+                cont = 1
             print()
 
         case "3":
@@ -42,10 +43,11 @@ while True:
             else:
                 name_list = list(sorteador_nome_set)
                 temp_var = random.choice(name_list)
-                # print(temp_var)
-                print(temp_var)
-                
 
+                print(f"Parabéns, {temp_var}, você foi sorteado(a)!\nAguarde o contato da equipe para o envio do prêmio!\n")
+                
+                sorteador_nome_set.remove(temp_var)
+                
         case "4":
             break
 
