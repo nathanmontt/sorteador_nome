@@ -5,6 +5,23 @@ Como funciona: O programa pede para o usuário digitar vários nomes (ou recebe 
 O que você vai praticar: Conversão de Listas para Sets (conjuntos não aceitam valores repetidos), uso da biblioteca nativa random (usando random.choice()).
 Toque para o GitHub: No Readme, explique como o uso do set() resolveu o problema de duplicatas em uma única linha de código, mostrando que você entende de otimização básica.
 """
+
+"""
+Conhecendo o frozenset()
+Faz com que não possamos adicionar ou remover nada, porém ainda é possível fazer algumas outras alterações:
+- copy
+- difference
+- entre outros
+
+É possível utilizar esse tipo de método para alguma das features?
+
+-------------
+
+Na hora que a feature de reiniciar for integrada, é possível usar o método union:
+- criamos um set temporário (um segundo)
+- a pessoa reiniciou (limitar a 1 uso apenas)
+- fazer uma união do set anterior com o set novo (union) 
+"""
 import random
 
 original_sorteador_nome_set = set()
