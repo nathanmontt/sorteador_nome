@@ -7,13 +7,14 @@ Toque para o GitHub: No Readme, explique como o uso do set() resolveu o problema
 """
 import random
 
-sorteador_nome_set = set()
+original_sorteador_nome_set = set()
+# secondary_sorteador_nome_set = set()
 temp_var = []
 cont = 1
 print("SORTEADOR DE NOMES PARA EVENTOS!")
 
 while True:
-    menu_options = input("Digite:\n1 - Adicionar\n2 - Visualizar\n3 - Sortear um nome\n4 - Sair\n: ")
+    menu_options = input("Digite:\n1 - Adicionar\n2 - Visualizar\n3 - Sortear nomes\n4 - Estatísticas\n5 - Sair\n: ")
     match menu_options:
         case "1":
             while True:
@@ -25,23 +26,23 @@ while True:
                 if name.lower() in ("q", "sair", "cancelar"):
                     break
 
-                sorteador_nome_set.add(name)
+                original_sorteador_nome_set.add(name)
 
         case "2":
-            if not sorteador_nome_set:
+            if not original_sorteador_nome_set:
                 print("Sem nomes, adicione um.")
             else:
-                for nome in sorteador_nome_set:
+                for nome in original_sorteador_nome_set:
                     print(f"{cont} - {nome}")
                     cont += 1
                 cont = 1
             print()
 
         case "3":
-            if not sorteador_nome_set:
+            if not original_sorteador_nome_set:
                 print("Sorteador vazio. Adicione um nome\n")
             else:
-                name_list = list(sorteador_nome_set)
+                name_list = list(original_sorteador_nome_set)
                 # temp_var = random.choice(name_list)
 
                 winners_quantity = int(input("Quantos vencedores quer que apareçam: "))
@@ -54,9 +55,13 @@ while True:
                     temp_var = random.choice(name_list)
                     print(f"Parabéns, {temp_var}, você foi sorteado(a)!\nAguarde o contato da equipe para o envio do prêmio!\n")
                     
-                    sorteador_nome_set.remove(temp_var)
+                    original_sorteador_nome_set.remove(temp_var)
                 
         case "4":
+            break
+
+        case "5":
+            print("Agradecemos a preferência\nUm ótimo dia!")
             break
 
         case _:
