@@ -74,12 +74,16 @@ while True:
                     
                     original_sorteador_nome_set.remove(temp_var)
                 
-        case "4":
-            statistic_list = list(original_sorteador_nome_set)
-            # print(f"Quantidade total de participantes: {}")
-            # print(statistic_list)
-            for each_participant in original_sorteador_nome_set:
-                print(each_participant)
+        case "4": # estatisticas básicas
+            # statistic_list = list(original_sorteador_nome_set)
+
+            if not original_sorteador_nome_set:
+                print("Adicione participantes para receber estatísticas")
+            else:
+                print("ESTATÍSTICAS DO SORTEIO")
+                print(f"Quantidade total de participantes: {len(original_sorteador_nome_set)}")
+                # for each_participant in original_sorteador_nome_set:
+                #     print(each_participant)
 
         case "5":
             print("Agradecemos a preferência\nUm ótimo dia!")
