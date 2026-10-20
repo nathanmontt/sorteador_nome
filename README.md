@@ -13,7 +13,7 @@ O sistema recebe uma lista de nomes e garante que cada pessoa tenha apenas uma c
 
 ## _Feats_ Futuras
 
-- [ ] **Sortear múltiplos nomes de uma vez:** melhorar a lógica para permitir múltiplos ganhadores diferentes em um único sorteio (1º, 2º e 3º lugar, por exemplo).
+- [x] **Sortear múltiplos nomes de uma vez:** melhorar a lógica para permitir múltiplos ganhadores diferentes em um único sorteio (1º, 2º e 3º lugar, por exemplo).
 - [ ] **Reiniciar torneio:** adicionar uma opção no menu que guarda a lista original de participantes e permite reconstruir o set quando quiser começar novamente.
 - [ ] **Remover participante:** permitir a exclusão de um nome específico antes de o sorteio iniciar.
 
