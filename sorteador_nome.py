@@ -25,7 +25,6 @@ Na hora que a feature de reiniciar for integrada, é possível usar o método un
 import random
 
 original_sorteador_nome_set = set()
-# secondary_sorteador_nome_set = set()
 temp_var = []
 cont = 1
 draw_cont = 0
@@ -33,7 +32,7 @@ draw_cont = 0
 print("SORTEADOR DE NOMES PARA EVENTOS!")
 
 while True:
-    menu_options = input("Digite:\n1 - Adicionar\n2 - Visualizar\n3 - Sortear nomes\n4 - Estatísticas\n5 - Sair\n: ")
+    menu_options = input("Digite:\n1 - Adicionar\n2 - Visualizar\n3 - Sortear nomes\n4 - Remover um participante\n5 - Estatísticas\n6 - Sair\n: ")
     match menu_options:
         case "1":   #adição de participantes
             while True:
@@ -80,10 +79,20 @@ while True:
                     original_sorteador_nome_set.remove(temp_var)
                 
                 print()
-                
-        case "4": # estatisticas básicas
-            # statistic_list = list(original_sorteador_nome_set)
 
+        case "4":   #remover um participante
+            if not original_sorteador_nome_set:
+                print("Lista vazia. Não há o que remover")
+            else:
+                remove_participant = input("Digite um nome para remover da lista: ").strip().capitalize()
+                if not remove_participant in original_sorteador_nome_set:
+                    print("Nome não consta na lista")
+                else:
+                    original_sorteador_nome_set.remove(remove_participant)
+                    print("Nome removido!")
+
+        
+        case "5": # estatisticas básicas
             if not original_sorteador_nome_set:
                 print("Adicione participantes para receber estatísticas")
             else:
@@ -97,8 +106,8 @@ while True:
 
                 print(f"Quantidade de sorteios já feitos: {draw_cont}")
                 print()
-
-        case "5":   #sair do programa
+        
+        case "6":   #sair do programa
             print("Agradecemos a preferência\nUm ótimo dia!")
             break
 
