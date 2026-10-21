@@ -79,6 +79,8 @@ while True:
                     name_list.remove(temp_var)
                     original_sorteador_nome_set.remove(temp_var)
                 
+                print()
+                
         case "4": # estatisticas básicas
             # statistic_list = list(original_sorteador_nome_set)
 
