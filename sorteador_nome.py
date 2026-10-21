@@ -41,6 +41,7 @@ while True:
                     continue
 
                 if name.lower() in ("q", "sair", "cancelar"):
+                    set_copy = original_sorteador_nome_set.copy()
                     break
 
                 original_sorteador_nome_set.add(name)
@@ -75,18 +76,19 @@ while True:
                     original_sorteador_nome_set.remove(temp_var)
                 
         case "4": # estatisticas básicas
-            statistic_list = list(original_sorteador_nome_set)
+            # statistic_list = list(original_sorteador_nome_set)
 
             if not original_sorteador_nome_set:
                 print("Adicione participantes para receber estatísticas")
             else:
                 print("ESTATÍSTICAS DO SORTEIO")
-                print(f"Quantidade total de participantes: {len(original_sorteador_nome_set)}")
+                print(f"Quantidade total de participantes: {len(set_copy)}")
 
-                result = len(statistic_list) - len(original_sorteador_nome_set)
-                print(f"Participantes restantes: {len(statistic_list)} - {len(original_sorteador_nome_set)} = {result}")
+                result = len(set_copy) - len(original_sorteador_nome_set)
+                print(f"Quantidade de participantes restantes: quantidade total - quantidade já sorteada = {result}")
                 # for each_participant in original_sorteador_nome_set:
                 #     print(each_participant)
+                print()
 
         case "5":
             print("Agradecemos a preferência\nUm ótimo dia!")
