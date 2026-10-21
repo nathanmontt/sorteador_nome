@@ -28,12 +28,14 @@ original_sorteador_nome_set = set()
 # secondary_sorteador_nome_set = set()
 temp_var = []
 cont = 1
+draw_cont = 0
+
 print("SORTEADOR DE NOMES PARA EVENTOS!")
 
 while True:
     menu_options = input("Digite:\n1 - Adicionar\n2 - Visualizar\n3 - Sortear nomes\n4 - Estatísticas\n5 - Sair\n: ")
     match menu_options:
-        case "1":
+        case "1":   #adição de participantes
             while True:
                 name = input("Digite um nome, ou 'Q' para sair: ").strip().capitalize()
                 if (any(caractere.isdigit() for caractere in name)) or not name:
@@ -46,7 +48,7 @@ while True:
 
                 original_sorteador_nome_set.add(name)
 
-        case "2":
+        case "2":   #visualização de participantes
             if not original_sorteador_nome_set:
                 print("Sem nomes, adicione um.")
             else:
@@ -56,10 +58,11 @@ while True:
                 cont = 1
             print()
 
-        case "3":
+        case "3":   #sorteio de participantes
             if not original_sorteador_nome_set:
                 print("Sorteador vazio. Adicione um nome\n")
             else:
+                draw_cont += 1
                 name_list = list(original_sorteador_nome_set)
                 # temp_var = random.choice(name_list)
 
@@ -72,7 +75,8 @@ while True:
                 for each_winner in range (0, winners_quantity):
                     temp_var = random.choice(name_list)
                     print(f"Parabéns, {temp_var}, você foi sorteado(a)!\nAguarde o contato da equipe para o envio do prêmio!\n")
-                    
+
+                    name_list.remove(temp_var)
                     original_sorteador_nome_set.remove(temp_var)
                 
         case "4": # estatisticas básicas
@@ -85,12 +89,14 @@ while True:
                 print(f"Quantidade total de participantes: {len(set_copy)}")
 
                 result = len(set_copy) - len(original_sorteador_nome_set)
-                print(f"Quantidade de participantes restantes: quantidade total - quantidade já sorteada = {result}")
+                print(f"Quantidade de participantes restantes (total - já sorteados) = {result}")
                 # for each_participant in original_sorteador_nome_set:
                 #     print(each_participant)
+
+                print(f"Quantidade de sorteios já feitos: {draw_cont}")
                 print()
 
-        case "5":
+        case "5":   #sair do programa
             print("Agradecemos a preferência\nUm ótimo dia!")
             break
 
